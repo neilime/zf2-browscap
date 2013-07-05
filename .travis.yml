@@ -13,10 +13,10 @@ before_install:
 # Install project
  - composer install --dev -o
 # Download browscap.ini
- - wget -O ~/browscap.ini http://browsers.garykeith.com/stream.asp?BrowsCapINI
+ - wget -O /home/travis/browscap.ini http://browsers.garykeith.com/stream.asp?BrowsCapINI
 
 before_script:
- - echo 'browscap = "/browscap.ini"' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+ - echo 'browscap = "/home/travis/browscap.ini"' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
  - cd tests
  
 script:
