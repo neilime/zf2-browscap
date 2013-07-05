@@ -76,13 +76,13 @@ __ZF2 Browscap__ module provides a service, helper for views and plugin for cont
 	"get_browser" plugin expects the same params as the native php function [get_browser](http://www.php.net/manual/en/function.get-browser.php).
 
  	```php
- 	$browscap = $this->browscap(); //Retrieve an object
+ 	$browscap = $this->get_browser(); //Retrieve an object
    	echo $browscap->parent;
  	
-   	$browscap = $this->browscap(null,true); //Retrieve an array
+   	$browscap = $this->get_browser(null,true); //Retrieve an array
    	echo $browscap['parent'];
    	
-   	$browscap = $this->browscap(
+   	$browscap = $this->get_browser(
    		\Zend\Http\Header\UserAgent::fromString('User-Agent: Mozilla/5.0 (Linux; Android 4.0.4; Desire HD Build/IMM76D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19')
    	); //Retrieve an object with an arbitrary user agent
    	echo $browscap->parent;   	
@@ -92,15 +92,15 @@ __ZF2 Browscap__ module provides a service, helper for views and plugin for cont
 	"get_browser" helper expects the same params as the native php function [get_browser](http://www.php.net/manual/en/function.get-browser.php).
 
  	```php
-   	$browscap = $this->browscap(); //Retrieve an object
+   	$browscap = $this->get_browser(); //Retrieve an object
    	echo $browscap->parent;
    	
-   	$browscap = $this->browscap(null,true); //Retrieve an array
+   	$browscap = $this->get_browser(null,true); //Retrieve an array
    	echo $browscap['parent'];
    	   	
-   	$browscap = $this->browscap(
+   	$browscap = $this->get_browser(
    		\Zend\Http\Header\UserAgent::fromString('User-Agent: Mozilla/5.0 (Linux; Android 4.0.4; Desire HD Build/IMM76D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19')
-   	); //Retrieve "\Mobile_Detect" object with an arbitrary user agent
+   	); //Retrieve an object with an arbitrary user agent
    	echo $browscap->parent;
    	```
 # Configuration
