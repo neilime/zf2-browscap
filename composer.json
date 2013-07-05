@@ -1,0 +1,34 @@
+{
+    "name": "neilime/zf2-browscap",
+    "type": "library",
+    "description": "ZF2 Browscap is a Zend Framework 2 module that provides an improved 'get_browser' function. This module could be standalone if 'browscap' configuration setting in php.ini is undefined or does not point to the correct location of the browscap.ini file",
+    "keywords": ["Zend Framework 2","browscap","browser capabilities","get_browser", "standalone"],
+    "homepage": "https://github.com/neilime/zf2-browscap",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Neilime",
+            "homepage": "https://github.com/neilime",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/neilime/zf2-browscap/issues"
+    },
+    "minimum-stability" : "stable",
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.*@stable"
+    },
+    "autoload": {
+        "psr-0": {
+            "Neilime\\Browscap": "src"
+        },
+        "classmap" : ["Module.php"]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
