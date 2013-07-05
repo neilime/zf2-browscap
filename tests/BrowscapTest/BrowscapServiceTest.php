@@ -16,7 +16,6 @@ class BrowscapServiceTest extends \PHPUnit_Framework_TestCase{
     }
 
     public function testCanUseNativeGetBrowser(){
-    	/* TODO remove */error_log(print_r(get_include_path(),true));
     	$this->assertTrue($this->browscapService->canUseNativeGetBrowser(),'"browscap" need to be defined in php.ini for tests');
     }
 
