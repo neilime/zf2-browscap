@@ -12,10 +12,10 @@ before_install:
  - composer self-update
 # Install project
  - composer install --dev -o
+  - wget -O ~/.phpenv/browscap.ini http://browsers.garykeith.com/stream.asp?BrowsCapINI
 
 before_script:
- - wget -O ~/.phpenv/versions/$(phpenv version-name)/etc/browscap.ini http://browsers.garykeith.com/stream.asp?BrowsCapINI
- - echo 'browscap = "~/.phpenv/versions/$(phpenv version-name)/etc/browscap.ini"' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+ - echo 'browscap = "~/.phpenv/browscap.ini"' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
  - cd tests
  
 script:
