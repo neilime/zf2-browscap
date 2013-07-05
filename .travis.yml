@@ -14,6 +14,7 @@ before_install:
  - composer install --dev -o
 
 before_script:
+ - ~/.phpenv/versions/$(phpenv version-name)/etc
  - wget http://browsers.garykeith.com/stream.asp?BrowsCapINI
  - echo 'browscap = "browscap.ini"' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
  - cd tests
