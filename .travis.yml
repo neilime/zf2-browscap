@@ -15,7 +15,7 @@ before_install:
 
 before_script:
  - wget -O ~/.phpenv/versions/$(phpenv version-name)/etc/browscap.ini http://browsers.garykeith.com/stream.asp?BrowsCapINI
- - echo 'browscap = "./browscap.ini"' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+ - echo 'browscap = "~/.phpenv/versions/$(phpenv version-name)/etc/browscap.ini"' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
  - cd tests
  
 script:
