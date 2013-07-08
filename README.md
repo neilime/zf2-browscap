@@ -118,13 +118,6 @@ _ZF2 Browscap_ provides console tools.
 
 ## Features
 
-    Rendering all assets
-    Empty cache directory
-
-## Usage
-
-## Features
-
     Load & parse "browscap.ini" file (or update cached browscap.ini)
 
 ## Usage
