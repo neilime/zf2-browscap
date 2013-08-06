@@ -38,7 +38,7 @@ class BrowscapService{
 	 * @throws \InvalidArgumentException
 	 * @return \BoilerAppAccessControl\Authentication\AccessControlAuthenticationService
 	 */
-	public static function factory($aOptions, \Zend\ServiceManager\ServiceLocatorInterface $oServiceLocator){
+	public static function factory($aOptions, \Zend\ServiceManager\ServiceLocatorInterface $oServiceLocator = null){
 		if($aOptions instanceof \Traversable)$aOptions = \Zend\Stdlib\ArrayUtils::iteratorToArray($aOptions);
 		elseif(!is_array($aOptions))throw new \InvalidArgumentException(__METHOD__.' expects an array or Traversable object; received "'.(is_object($aOptions)?get_class($aOptions):gettype($aOptions)).'"');
 
