@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Zf2-browscap by neilime</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/neilime/zf2-browscap">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/neilime/zf2-browscap/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/neilime/zf2-browscap/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Zf2-browscap</h1>
+          <p>ZF2 Browscap is a Zend Framework 2 module that provides browser capabilities tools</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/neilime">neilime</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a name="zf2-browscap-v10" class="anchor" href="#zf2-browscap-v10"><span class="octicon octicon-link"></span></a>ZF2 Browscap, v1.0</h1>
+
+<p><a href="https://travis-ci.org/neilime/zf2-browscap"><img src="https://travis-ci.org/neilime/zf2-browscap.png?branch=master" alt="Build Status"></a>
+<a href="https://packagist.org/packages/neilime/zf2-browscap"><img src="https://poser.pugx.org/neilime/zf2-browscap/v/stable.png" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/neilime/zf2-browscap"><img src="https://poser.pugx.org/neilime/zf2-browscap/downloads.png" alt="Total Downloads"></a>
+<img src="https://raw.github.com/zf2-boiler-app/app-test/master/ressources/100%25-code-coverage.png" alt="Code coverage" title="100% code coverage"></p>
+
+<p>NOTE : If you want to contribute don't hesitate, I'll review any PR.</p>
+
+<h2>
+<a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h2>
+
+<p>ZF2 Browscap is a Zend Framework 2 module that provides an improved <a href="http://www.php.net/manual/en/function.get-browser.php">get_browser</a> function. 
+This module could be standalone if "browscap" configuration setting in php.ini is undefined or does not point to the correct location of the browscap.ini file. </p>
+
+<h2>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<ul>
+<li>
+<a href="https://github.com/zendframework/zf2">Zend Framework 2</a> (latest master)</li>
+</ul><h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<h3>
+<a name="main-setup" class="anchor" href="#main-setup"><span class="octicon octicon-link"></span></a>Main Setup</h3>
+
+<h4>
+<a name="by-cloning-project" class="anchor" href="#by-cloning-project"><span class="octicon octicon-link"></span></a>By cloning project</h4>
+
+<ol>
+<li>Install <a href="https://github.com/browscap/browscap">browscap</a> by cloning it into <code>./vendor/</code>.</li>
+<li>Clone this project into your <code>./vendor/</code> directory.</li>
+</ol><h4>
+<a name="with-composer" class="anchor" href="#with-composer"><span class="octicon octicon-link"></span></a>With composer</h4>
+
+<ol>
+<li>
+<p>Add this project in your composer.json:</p>
+
+<div class="highlight"><pre><span class="s2">"require"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nt">"neilime/zf2-browscap"</span><span class="p">:</span> <span class="s2">"dev-master"</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li>
+<p>Now tell composer to download <strong>ZF2 Browscap</strong> by running the command:</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>php composer.phar update
+</pre></div>
+</li>
+</ol><h4>
+<a name="post-installation" class="anchor" href="#post-installation"><span class="octicon octicon-link"></span></a>Post installation</h4>
+
+<ol>
+<li>
+<p>Enabling it in your <code>application.config.php</code>file.</p>
+
+<div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'modules'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="c1">// ...</span>
+        <span class="s1">'Neilime\Browscap'</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="c1">// ...</span>
+<span class="p">);</span>
+</pre></div>
+</li>
+</ol><h1>
+<a name="how-to-use-zf2-browscap" class="anchor" href="#how-to-use-zf2-browscap"><span class="octicon octicon-link"></span></a>How to use <em>ZF2 Browscap</em>
+</h1>
+
+<p><strong>ZF2 Browscap</strong> module provides a service, helper for views and plugin for controllers</p>
+
+<ol>
+<li>
+<p>Call Browscap with the service manager</p>
+
+<div class="highlight"><pre>
+<span class="cm">/* @var $serviceManager \Zend\ServiceManager\ServiceLocatorInterface */</span> 
+
+<span class="nv">$browscap</span> <span class="o">=</span> <span class="nv">$serviceManager</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'BrowscapService'</span><span class="p">);</span> <span class="c1">//Retrieve "\Neilime\Browscap\BrowscapService" object</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$browscap</span><span class="o">-&gt;</span><span class="na">getBrowser</span><span class="p">());</span> <span class="c1">//Display an object which will contain various data elements representing, for instance, the browser's major and minor version numbers and ID string;</span>
+</pre></div>
+</li>
+<li>
+<p>Call Browscap in a controller
+"get_browser" plugin expects the same params as the native php function <a href="http://www.php.net/manual/en/function.get-browser.php">get_browser</a>.</p>
+
+<div class="highlight"><pre><span class="nv">$browscap</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get_browser</span><span class="p">();</span> <span class="c1">//Retrieve an object</span>
+<span class="k">echo</span> <span class="nv">$browscap</span><span class="o">-&gt;</span><span class="na">parent</span><span class="p">;</span>
+
+<span class="nv">$browscap</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get_browser</span><span class="p">(</span><span class="k">null</span><span class="p">,</span><span class="k">true</span><span class="p">);</span> <span class="c1">//Retrieve an array</span>
+<span class="k">echo</span> <span class="nv">$browscap</span><span class="p">[</span><span class="s1">'parent'</span><span class="p">];</span>
+
+<span class="nv">$browscap</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get_browser</span><span class="p">(</span>
+    <span class="nx">\Zend\Http\Header\UserAgent</span><span class="o">::</span><span class="na">fromString</span><span class="p">(</span><span class="s1">'User-Agent: Mozilla/5.0 (Linux; Android 4.0.4; Desire HD Build/IMM76D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19'</span><span class="p">)</span>
+<span class="p">);</span> <span class="c1">//Retrieve an object with an arbitrary user agent</span>
+<span class="k">echo</span> <span class="nv">$browscap</span><span class="o">-&gt;</span><span class="na">parent</span><span class="p">;</span>     
+</pre></div>
+</li>
+<li>
+<p>Call Browscap in a view
+"get_browser" helper expects the same params as the native php function <a href="http://www.php.net/manual/en/function.get-browser.php">get_browser</a>.</p>
+
+<div class="highlight"><pre><span class="nv">$browscap</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get_browser</span><span class="p">();</span> <span class="c1">//Retrieve an object</span>
+<span class="k">echo</span> <span class="nv">$browscap</span><span class="o">-&gt;</span><span class="na">parent</span><span class="p">;</span>
+
+<span class="nv">$browscap</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get_browser</span><span class="p">(</span><span class="k">null</span><span class="p">,</span><span class="k">true</span><span class="p">);</span> <span class="c1">//Retrieve an array</span>
+<span class="k">echo</span> <span class="nv">$browscap</span><span class="p">[</span><span class="s1">'parent'</span><span class="p">];</span>
+
+<span class="nv">$browscap</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get_browser</span><span class="p">(</span>
+    <span class="nx">\Zend\Http\Header\UserAgent</span><span class="o">::</span><span class="na">fromString</span><span class="p">(</span><span class="s1">'User-Agent: Mozilla/5.0 (Linux; Android 4.0.4; Desire HD Build/IMM76D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19'</span><span class="p">)</span>
+<span class="p">);</span> <span class="c1">//Retrieve an object with an arbitrary user agent</span>
+<span class="k">echo</span> <span class="nv">$browscap</span><span class="o">-&gt;</span><span class="na">parent</span><span class="p">;</span>
+</pre></div>
+
+<h1>
+<a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h1>
+</li>
+</ol><p>The default configuration is setup to use the native php function <a href="http://www.php.net/manual/en/function.get-browser.php">get_browser</a> if it's available. 
+Load browscap.ini from "<a href="http://browsers.garykeith.com/stream.asp?BrowsCapINI">http://browsers.garykeith.com/stream.asp?BrowsCapINI</a>" and cache it in a file otherwise;</p>
+
+<ul>
+<li>boolean <code>allows_native_get_browser</code>: Define if the native php function <a href="http://www.php.net/manual/en/function.get-browser.php">get_browser</a> could be used if it's available.</li>
+<li>string <code>browscap_ini_path</code> : (optionnal) only needed if the native php function <a href="http://www.php.net/manual/en/function.get-browser.php">get_browser</a> if it's unavailable or if <code>allows_native_get_browser</code> option is set to false. Define the borwscap.ini file path (could be an url)</li>
+<li>Zend\Cache\Storage\Adapter|array <code>cache</code> : (optionnal) define the cache adapter. This not only saves you from loading and parsing the "browscap.ini" each time, but also guarantees an optimized loading procedure. </li>
+</ul><h1>
+<a name="tools" class="anchor" href="#tools"><span class="octicon octicon-link"></span></a>Tools</h1>
+
+<p><em>ZF2 Browscap</em> provides console tools.</p>
+
+<h2>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<pre><code>Load &amp; parse "browscap.ini" file (or update cached browscap.ini)
+</code></pre>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<h3>
+<a name="load--parse-browscapini-file" class="anchor" href="#load--parse-browscapini-file"><span class="octicon octicon-link"></span></a>Load &amp; parse "browscap.ini" file</h3>
+
+<pre><code>php public/index.php load-browscap
+</code></pre>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
