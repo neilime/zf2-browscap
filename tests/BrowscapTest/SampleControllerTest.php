@@ -5,27 +5,27 @@ class SampleControllerTest extends \Zend\Test\PHPUnit\Controller\AbstractHttpCon
 	protected $results = array(
 		'Mozilla/5.0 (Linux; Android 4.0.4; Desire HD Build/IMM76D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19' => array(
 			'browser_name_pattern' => 'Mozilla/5.0 (Linux*Android 4.0*)*AppleWebKit/*(*KHTML, like Gecko*)*Chrome/18.*Safari/*',
-			'parent' => 'Chrome 18.0','platform' => 'Android','platform_version' => '4.0','win32' => false,'ismobiledevice' => true,
+			'parent' => 'Chrome 18.0','platform' => 'Android','platform_version' => '4.0','win32' => '','ismobiledevice' => 1,
 			'browser_name_regex' => '^Mozilla/5\.0 \(Linux.*Android 4\.0.*\).*AppleWebKit/.*\(.*KHTML, like Gecko.*\).*Chrome/18\..*Safari/.*$',
-			'comment' => 'Chrome 18.0','browser' => 'Chrome','version' => '18.0','majorver' => '18','minorver' => '0','frames' => true,'iframes' => true,'tables' => true,
-			'cookies' => true,'javascript' => true,'javaapplets' => true,'cssversion' => '3','alpha' => false,'beta' => false,'win16' => false,'win64' => false,
-			'backgroundsounds' => false,'vbscript' => false,'activexcontrols' => false,'issyndicationreader' => false,'crawler' => false,'aolversion' => '0'
+			'comment' => 'Chrome 18.0','browser' => 'Chrome','version' => '18.0','majorver' => '18','minorver' => '0','frames' => 1,'iframes' => 1,'tables' => 1,
+			'cookies' => 1,'javascript' => 1,'javaapplets' => 1,'cssversion' => '3','alpha' => '','beta' => '','win16' => '','win64' => '',
+			'backgroundsounds' => '','vbscript' => '','activexcontrols' => '','issyndicationreader' => '','crawler' => '','aolversion' => '0'
 		),
 		'Mozilla/5.0 (iPod; U; CPU iPhone OS 2_1 like Mac OS X; fr-fr) AppleWebKit/525.18.1 (KHTML, like Gecko) Version/3.1.1 Mobile/5F137 Safari/525.20' => array(
 			'browser_name_pattern' => 'Mozilla/5.0 (iPod*CPU*OS 2_1* like Mac OS X*)*AppleWebKit/*(*KHTML, like Gecko*)*Version/3.1*Mobile/*Safari/*',
-			'parent' => 'Mobile Safari 3.1','platform' => 'iOS','platform_version' => '2.1','win32' => false,'ismobiledevice' => true,
+			'parent' => 'Mobile Safari 3.1','platform' => 'iOS','platform_version' => '2.1','win32' => '','ismobiledevice' => 1,
 			'browser_name_regex' => '^Mozilla/5\.0 \(iPod.*CPU.*OS 2_1.* like Mac OS X.*\).*AppleWebKit/.*\(.*KHTML, like Gecko.*\).*Version/3\.1.*Mobile/.*Safari/.*$',
-			'comment' => 'Mobile Safari 3.1','browser' => 'Safari','version' => '3.1','majorver' => '3','minorver' => '1','frames' => true,'iframes' => true,'tables' => true,
-			'cookies' => true,'javascript' => true,'javaapplets' => false,'cssversion' => '3','alpha' => false,'beta' => false,'win16' => false,'win64' => false,
-			'backgroundsounds' => false,'vbscript' => false,'activexcontrols' => false,'issyndicationreader' => false,'crawler' => false,'aolversion' => '0'
+			'comment' => 'Mobile Safari 3.1','browser' => 'Safari','version' => '3.1','majorver' => '3','minorver' => '1','frames' => 1,'iframes' => 1,'tables' => 1,
+			'cookies' => 1,'javascript' => 1,'javaapplets' => '','cssversion' => '3','alpha' => '','beta' => '','win16' => '','win64' => '',
+			'backgroundsounds' => '','vbscript' => '','activexcontrols' => '','issyndicationreader' => '','crawler' => '','aolversion' => '0'
 		),
 		'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0' => array(
 			'browser_name_pattern' => 'Mozilla/5.0 (*Windows NT 6.1*WOW64*)*Gecko/*Firefox/22.*',
-			'parent' => 'Firefox 22.0','platform' => 'Win7','platform_version' => '6.1','win32' => false,'ismobiledevice' => false,
+			'parent' => 'Firefox 22.0','platform' => 'Win7','platform_version' => '6.1','win32' => '','ismobiledevice' => '',
 			'browser_name_regex' => '^Mozilla/5\.0 \(.*Windows NT 6\.1.*WOW64.*\).*Gecko/.*Firefox/22\..*$',
-			'comment' => 'Firefox 22.0','browser' => 'Firefox','version' => '22.0','majorver' => '22','minorver' => '0','frames' => true,'iframes' => true,'tables' => true,
-			'cookies' => true,'javascript' => true,'javaapplets' => true,'cssversion' => '3','alpha' => false,'beta' => true,'win16' => false,'win64' => true,
-			'backgroundsounds' => false,'vbscript' => false,'activexcontrols' => false,'issyndicationreader' => false,'crawler' => false,'aolversion' => '0'
+			'comment' => 'Firefox 22.0','browser' => 'Firefox','version' => '22.0','majorver' => '22','minorver' => '0','frames' => 1,'iframes' => 1,'tables' => 1,
+			'cookies' => 1,'javascript' => 1,'javaapplets' => 1,'cssversion' => '3','alpha' => '','beta' => '','win16' => '','win64' => 1,
+			'backgroundsounds' => '','vbscript' => '','activexcontrols' => '','issyndicationreader' => '','crawler' => '','aolversion' => '0'
 		)
 	);
 
