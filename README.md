@@ -2,6 +2,8 @@ ZF2 Browscap, v1.0
 =======
 
 [![Build Status](https://travis-ci.org/neilime/zf2-browscap.png?branch=master)](https://travis-ci.org/neilime/zf2-browscap)
+[![Latest Stable Version](https://poser.pugx.org/neilime/zf2-browscap/v/stable.png)](https://packagist.org/packages/neilime/zf2-browscap)
+[![Total Downloads](https://poser.pugx.org/neilime/zf2-browscap/downloads.png)](https://packagist.org/packages/neilime/zf2-browscap)
 ![Code coverage](https://raw.github.com/zf2-boiler-app/app-test/master/ressources/100%25-code-coverage.png "100% code coverage")
 
 NOTE : If you want to contribute don't hesitate, I'll review any PR.
