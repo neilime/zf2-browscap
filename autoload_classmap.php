@@ -3,7 +3,7 @@
 return array(
     'Neilime\Browscap\BrowscapService'                      => __DIR__ . '/src/Browscap/BrowscapService.php',
     'Neilime\Browscap\Controller\ToolsController'           => __DIR__ . '/src/Browscap/Controller/ToolsController.php',
-    'Neilime\Browscap\Factory\BrowscapServiceFactory'       => __DIR__ . '/src/Browscap/factory/BrowscapServiceFactory.php',
+    'Neilime\Browscap\Factory\BrowscapServiceFactory'       => __DIR__ . '/src/Browscap/Factory/BrowscapServiceFactory.php',
     'Neilime\Browscap\Mvc\Controller\Plugin\BrowscapPlugin' => __DIR__ . '/src/Browscap/Mvc/Controller/Plugin/BrowscapPlugin.php',
     'Neilime\Browscap\View\Helper\BrowscapHelper'           => __DIR__ . '/src/Browscap/View/Helper/BrowscapHelper.php',
 );

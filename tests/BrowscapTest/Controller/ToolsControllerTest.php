@@ -99,6 +99,32 @@ class ToolsControllerTest extends \Zend\Test\PHPUnit\Controller\AbstractConsoleC
     	$this->assertFileNotExists(__DIR__.'/../_file/cache/zfcache-7d/zfcache-Neilime_Browscap.dat');
     }
 
+
+    public function testLoadBrowscapIniActionWithWrongConfiguration(){
+    	$oServiceLocator = $this->getApplicationServiceLocator();
+    	$oConsole = new \Neilime\BrowscapTest\Console\ConsoleAdapter();
+    	$oConsole->stream = fopen('php://memory', 'w+');
+
+    	$aConfiguration = $oServiceLocator->get('Config');
+    	$aConfiguration['zf2_browscap']['allows_native_get_browser'] = true;
+    	$aConfiguration['zf2_browscap']['cache'] = 'wrong';
+
+    	$bAllowOverride = $oServiceLocator->getAllowOverride();
+    	if(!$bAllowOverride)$oServiceLocator->setAllowOverride(true);
+    	$oServiceLocator
+    		->setService('Config',$aConfiguration)
+    		->setService('console',$oConsole)
+    		->setAllowOverride($bAllowOverride);
+
+    	fwrite($oConsole->stream,'y');
+    	$this->dispatch('load-browscap');
+    	$this->assertResponseStatusCode(1);
+		$this->assertModuleName('neilime');
+    	$this->assertControllerName('neilime\browscap\controller\tools');
+    	$this->assertControllerClass('ToolsController');
+    	$this->assertMatchedRouteName('load-browscap');
+    }
+
     public function tearDown(){
     	//Empty cache directory except .gitignore
     	foreach(new \RecursiveIteratorIterator(

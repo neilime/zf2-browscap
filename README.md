@@ -1,4 +1,4 @@
-ZF2 Browscap, v1.0
+ZF2 Browscap, v1.1
 =======
 
 [![Build Status](https://travis-ci.org/neilime/zf2-browscap.png?branch=master)](https://travis-ci.org/neilime/zf2-browscap)
@@ -14,13 +14,17 @@ Introduction
 ZF2 Browscap is a Zend Framework 2 module that provides an improved [get_browser](http://www.php.net/manual/en/function.get-browser.php) function. 
 This module could be standalone if "browscap" configuration setting in php.ini is undefined or does not point to the correct location of the browscap.ini file. 
 
+Contributing
+------------
+
+If you wish to contribute to ZF2 Browscap, please read both the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
 Requirements
 ------------
 
-* [Zend Framework 2](https://github.com/zendframework/zf2) (latest master)
+* [Zend Framework 2](https://github.com/zendframework/zf2) (2.*)
 
-Installation
-------------
+## Installation
 
 ### Main Setup
 
@@ -59,8 +63,16 @@ Installation
         // ...
     );
     ```
-    
-# How to use _ZF2 Browscap_
+
+## Configuration
+
+ * string `browscap_ini_path` : (optionnal) only needed if the native php function [get_browser](http://www.php.net/manual/en/function.get-browser.php) is unavailable or if `allows_native_get_browser` option is set to false. Define the borwscap.ini file path (allows locale or remote file)
+ * Zend\Cache\Storage\StorageInterface|string|array `cache`: (optionnal) Define the cache storage adapter to store parsed browscap.ini.    
+   Allows classname and service retrieving an `Zend\Cache\Storage\StorageInterface`, or an array to be use with  `Zend\Cache\StorageFactory::factory`.
+   This not only saves you from loading and parsing the "browscap.ini" each time, but also guarantees an optimized loading procedure.
+ * boolean `allows_native_get_browser`: Define if the native php function [get_browser](http://www.php.net/manual/en/function.get-browser.php) could be used if it's available.
+ 
+## How to use _ZF2 Browscap_
 
 __ZF2 Browscap__ module provides a service, helper for views and plugin for controllers
 
@@ -105,25 +117,17 @@ __ZF2 Browscap__ module provides a service, helper for views and plugin for cont
    	); //Retrieve an object with an arbitrary user agent
    	echo $browscap->parent;
    	```
-# Configuration
 
-The default configuration is setup to use the native php function [get_browser](http://www.php.net/manual/en/function.get-browser.php) if it's available. 
-Load browscap.ini from "http://browsers.garykeith.com/stream.asp?BrowsCapINI" and cache it in a file otherwise;
-
- * boolean `allows_native_get_browser`: Define if the native php function [get_browser](http://www.php.net/manual/en/function.get-browser.php) could be used if it's available.
- * string `browscap_ini_path` : (optionnal) only needed if the native php function [get_browser](http://www.php.net/manual/en/function.get-browser.php) if it's unavailable or if `allows_native_get_browser` option is set to false. Define the borwscap.ini file path (could be an url)
- * Zend\Cache\Storage\Adapter|array `cache` : (optionnal) define the cache adapter. This not only saves you from loading and parsing the "browscap.ini" each time, but also guarantees an optimized loading procedure. 
- 
-# Tools
+## Tools
 
 _ZF2 Browscap_ provides console tools.
 
-## Features
+### Features
 
     Load & parse "browscap.ini" file (or update cached browscap.ini)
 
-## Usage
+### Usage
 
-### Load & parse "browscap.ini" file 
+#### Load & parse "browscap.ini" file 
 
     php public/index.php load-browscap

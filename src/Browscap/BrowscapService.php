@@ -48,10 +48,7 @@ class BrowscapService{
 		if(isset($aOptions['browscap_ini_path']))$oBrowscapService->setBrowscapIniPath($aOptions['browscap_ini_path']);
 
 		//Cache
-		if(isset($aOptions['cache']))$oBrowscapService->setCache($aOptions['cache'] instanceof \Zend\Cache\Storage\StorageInterface
-			?$aOptions['cache']:
-			\Zend\Cache\StorageFactory::factory($aOptions['cache'])
-		);
+		if(isset($aOptions['cache']))$oBrowscapService->setCache($aOptions['cache']);
 
 		if(isset($aOptions['allows_native_get_browser']))$oBrowscapService->setAllowsNativeGetBrowser(!!$aOptions['allows_native_get_browser']);
 
