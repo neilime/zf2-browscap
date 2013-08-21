@@ -38,7 +38,7 @@ class BrowscapService{
 	 * @throws \InvalidArgumentException
 	 * @return \BoilerAppAccessControl\Authentication\AccessControlAuthenticationService
 	 */
-	public static function factory($aOptions){
+	public static function factory($aOptions, \Zend\ServiceManager\ServiceLocatorInterface $oServiceLocator = null){
 		if($aOptions instanceof \Traversable)$aOptions = \Zend\Stdlib\ArrayUtils::iteratorToArray($aOptions);
 		elseif(!is_array($aOptions))throw new \InvalidArgumentException(__METHOD__.' expects an array or Traversable object; received "'.(is_object($aOptions)?get_class($aOptions):gettype($aOptions)).'"');
 
@@ -48,10 +48,17 @@ class BrowscapService{
 		if(isset($aOptions['browscap_ini_path']))$oBrowscapService->setBrowscapIniPath($aOptions['browscap_ini_path']);
 
 		//Cache
-		if(isset($aOptions['cache']))$oBrowscapService->setCache($aOptions['cache'] instanceof \Zend\Cache\Storage\StorageInterface
-			?$aOptions['cache']:
-			\Zend\Cache\StorageFactory::factory($aOptions['cache'])
-		);
+		if(isset($aOptions['cache'])) {
+		    if ($aOptions['cache'] instanceof \Zend\Cache\Storage\StorageInterface) {
+		        $cache = $aOptions['cache'];
+		    } elseif (is_array($aOptions['cache'])) {
+		        $cache = \Zend\Cache\StorageFactory::factory($aOptions['cache']);
+		    } elseif (is_string($aOptions['cache']) && $oServiceLocator->has($aOptions['cache'])) {
+		        $cache = $oServiceLocator->get($aOptions['cache']);
+		    }
+		    
+		    $oBrowscapService->setCache($cache);
+		}
 
 		if(isset($aOptions['allows_native_get_browser']))$oBrowscapService->setAllowsNativeGetBrowser(!!$aOptions['allows_native_get_browser']);
 

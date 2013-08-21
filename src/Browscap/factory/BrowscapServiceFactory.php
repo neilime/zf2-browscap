@@ -8,6 +8,6 @@ class BrowscapServiceFactory implements \Zend\ServiceManager\FactoryInterface{
 	 */
 	public function createService(\Zend\ServiceManager\ServiceLocatorInterface $oServiceLocator){
 		$aConfiguration = $oServiceLocator->get('config');
-		return \Neilime\Browscap\BrowscapService::factory(empty($aConfiguration['zf2_browscap'])?null:$aConfiguration['zf2_browscap']);
+		return \Neilime\Browscap\BrowscapService::factory(empty($aConfiguration['zf2_browscap'])?null:$aConfiguration['zf2_browscap'], $oServiceLocator);
 	}
 }
