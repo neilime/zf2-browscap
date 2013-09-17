@@ -66,7 +66,7 @@ Requirements
 
 ## Configuration
 
- * string `browscap_ini_path` : (optionnal) only needed if the native php function [get_browser](http://www.php.net/manual/en/function.get-browser.php) is unavailable or if `allows_native_get_browser` option is set to false. Define the borwscap.ini file path (allows locale or remote file)
+ * string `browscap_ini_path` : (optionnal) only needed if the native php function [get_browser](http://www.php.net/manual/en/function.get-browser.php) is unavailable or if `allows_native_get_browser` option is set to false. Define the browscap.ini file path (allows locale or remote file)
  * Zend\Cache\Storage\StorageInterface|string|array `cache`: (optionnal) Define the cache storage adapter to store parsed browscap.ini.    
    Allows classname and service retrieving an `Zend\Cache\Storage\StorageInterface`, or an array to be use with  `Zend\Cache\StorageFactory::factory`.
    This not only saves you from loading and parsing the "browscap.ini" each time, but also guarantees an optimized loading procedure.
