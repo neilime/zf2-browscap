@@ -1,5 +1,7 @@
-ZF2 Browscap, v1.1
+ZF2 Browscap
 =======
+
+__⚠️ This module is for Zend Framework 2, it is deprecated ⚠️__ 
 
 [![Build Status](https://travis-ci.org/neilime/zf2-browscap.png?branch=master)](https://travis-ci.org/neilime/zf2-browscap)
 [![Latest Stable Version](https://poser.pugx.org/neilime/zf2-browscap/v/stable.png)](https://packagist.org/packages/neilime/zf2-browscap)
